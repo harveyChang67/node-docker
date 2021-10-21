@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nod_dev_env:
+    build: .
+    container_name: node-docker
+    env_file: # for_container
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    volumes:
+      - /home/node/app/${PROJECT_NAME}/node_modules
+      - .:/home/node/app/${PROJECT_NAME}
+      - C:\Users\harvey\source\repos\Mente_test:/home/node/app/${PROJECT_NAME}/Mente_test
+    entrypoint: tail -F /dev/null # This command makes the container run indefinitely
