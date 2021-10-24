@@ -10,5 +10,5 @@ services:
     volumes:
       - /home/node/app/${PROJECT_NAME}/node_modules
       - .:/home/node/app/${PROJECT_NAME}
-      - C:\Users\harvey\source\repos\Mente_test:/home/node/app/${PROJECT_NAME}/Mente_test
+      - ${APPDATA_VOLUME}:/home/node/app/${PROJECT_NAME}/data
     entrypoint: tail -F /dev/null # This command makes the container run indefinitely
