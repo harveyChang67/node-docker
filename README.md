@@ -7,7 +7,7 @@ Node.js 開發環境的容器化：
 
 **Notice！**
 
-docker-compose 後務必用 VSCode 這樣用
+docker-compose 後 務必使用 VSCode Remote
 
 1. Attach to the container in VSCode.
 2. Enjoy it.
