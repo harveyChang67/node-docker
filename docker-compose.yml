@@ -2,12 +2,7 @@ version: "3"
 
 services:
   nod_dev_env:
-    image: node:14.5.0-alpine
-    command: sh -c " 
-      mkdir -p /home/node/app
-      && apk add --update python3 make g++ && rm -rf /var/cache/apk/*
-      && apk add --upgrade xset
-      && tail -F /dev/null"                                               # This command makes the container run indefinitely
+    build: ./docker                  # This command makes the container run indefinitely
     container_name: node-docker
     env_file: # for_container
       - .env
@@ -18,4 +13,4 @@ services:
       - .:/home/node/app/${PROJECT_NAME}
       - ${APPDATA_VOLUME}:/home/node/app/${PROJECT_NAME}/data
     working_dir: /home/node/app
-    # entrypoint: tail -F /dev/null # This command makes the container run indefinitely
+    entrypoint: tail -F /dev/null # This command makes the container run indefinitely
